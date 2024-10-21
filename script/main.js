@@ -19,9 +19,30 @@ const fetchData = () => {
         // Run amimation if so
         if ( dataArr.length === dataArr.indexOf(customData) + 1 ) {
           animationTimeline();
+          playAudio();
         } 
       });
     });
+};
+
+const delayInSeconds = 1; // Define the delay in seconds
+
+const playAudio = () => {
+  const audio = new Audio('https://arasydafa.github.io/happy-birthday/its-your-day.mp3'); // Make sure this file exists in the correct path
+  audio.loop = true; // Enable looping
+  
+  // Add debugging message
+  console.log(`Attempting to play audio in ${delayInSeconds} seconds...`);
+
+  setTimeout(() => {
+    audio.play()
+      .then(() => {
+        console.log(`Audio started playing after ${delayInSeconds} seconds.`);
+      })
+      .catch((error) => {
+        console.error("Failed to play audio:", error);
+      });
+  }, delayInSeconds * 1000); // Convert seconds to milliseconds
 };
 
 // Animation Timeline
