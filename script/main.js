@@ -25,7 +25,7 @@ const fetchData = () => {
     });
 };
 
-const delayInSeconds = 1; // Define the delay in seconds
+const delayInSeconds = 3; // Define the delay in seconds
 
 const playAudio = () => {
   const audio = new Audio('https://arasydafa.github.io/happy-birthday/its-your-day.mp3'); // Make sure this file exists in the correct path
