@@ -19,7 +19,6 @@ const fetchData = () => {
         // Run amimation if so
         if ( dataArr.length === dataArr.indexOf(customData) + 1 ) {
           animationTimeline();
-          playAudio();
         } 
       });
     });
@@ -44,6 +43,12 @@ const playAudio = () => {
       });
   }, delayInSeconds * 1000); // Convert seconds to milliseconds
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+  // After the DOM is loaded, trigger the playAudio function after a short delay
+  console.log("Page loaded. Starting audio after a delay.");
+  playAudio();
+});
 
 // Animation Timeline
 const animationTimeline = () => {
